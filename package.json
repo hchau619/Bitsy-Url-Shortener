@@ -1,0 +1,11 @@
+{
+	"name": "my-url-shortener",
+	"author": "Hung Chau",
+	"description": "Shortens URLs",
+	"version": "1.0.0",
+	"dependencies": {
+		"express": "^4.12.2",
+	  "body-parser": "^1.12.0",
+	  "mongoose": "^4.0.1"
+	}
+}
