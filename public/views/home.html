@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<form>
+		    <div class="input-group">
+		      <input class="form-control input-md" placeholder="Enter a link to shorten" id="url-input" type="text" ng-model="url">
+		      <div class="input-group-btn">
+		        <button class="btn btn-md btn-success" ng-click="urlSubmit()">bitsify</button>
+		      </div>
+		    </div>
+		</form>
+	</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-success" ng-show="results">
+			<div class="panel-body">
+				<a href="{{results.short}}" target="_blank">{{results.short}}</a>
+				<br>
+				{{results.long}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="col-md-2 col-xs-2">
+				<b>Rank</b>
+			</div>
+			<div class="col-md-8 col-xs-8 text-center ">
+				<b>Links</b>
+			</div>
+			<div class="col-md-2 col-xs-2  text-right">
+				<b>Hits</b>
+			</div>
+		</div>
+
+		<div class="row" ng-repeat="entry in topTen track by $index">
+			<div class="col-md-2 col-xs-2">
+				{{$index + 1}}
+			</div>
+			<div class="col-md-8 col-xs-8 text-center" ng-click="getTopTen()">
+				<a href="{{entry.short}}" target="_blank" >
+				{{entry.short}}
+				</a>
+			</div>
+			<div class="col-md-2 col-xs-2 text-right">
+				{{entry.hits}}
+			</div>
+		</div>
+	</div>
+</div>
